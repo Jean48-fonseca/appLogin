@@ -10,16 +10,16 @@ class UserController extends Controller
 {
 public function create()
     {
-        $carrers = Career::all();
-        return view('register', compact('carrers'));
+        $careers = Career::all();
+        return view('register', compact('careers'));
     }
     public function store(Request $request){
-        $request->validated([
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|unique:users',
             'password' => 'required|min:8|confirmed',
             'career_id' => 'required|exists:careers,id',
-            'terms_acceptd' => 'accepted',
+            'terms_accepted' => 'accepted',
         ]);
 
         User::create([
@@ -27,7 +27,7 @@ public function create()
             'email' => $request->email,
             'password' =>bcrypt( $request->password),
             'career_id' => $request->career_id,
-            'terms_acceptd' => $request->has('terms_acceptd'),
+            
         ]);
 
         return redirect()->route('register')->with('success', 'Usuario registrado exitosamente.');

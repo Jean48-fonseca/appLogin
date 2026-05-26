@@ -1,0 +1,159 @@
+/* Importar una fuente moderna (opcional pero recomendado) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Estilos generales para centrar el formulario en la pantalla */
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/img/fondo.png.png');
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen para que no se mueva al hacer scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #374151;
+}
+
+/* Contenedor principal de la tarjeta */
+.register-container {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+
+/* Título */
+.register-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Grupos de campos */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+/* Etiquetas (Labels) */
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+/* Inputs y Selects */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group select {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Efecto focus en los inputs (cuando el usuario hace clic en ellos) */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3b82f6; /* Color azul */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Contenedor específico para el checkbox para alinearlo horizontalmente */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 100%;
+    background-color: #3b82f6; /* Color azul principal */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 1rem;
+}
+
+/* Efecto hover en el botón */
+.btn-submit:hover {
+    background-color: #2563eb; /* Azul más oscuro al pasar el ratón */
+}
+/* --- ALERTA DE ÉXITO --- */
+.success-message {
+    background-color: #d1fae5; /* Fondo verde claro */
+    border: 1px solid #34d399; /* Borde verde un poco más oscuro */
+    color: #065f46; /* Texto verde oscuro */
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    
+    /* Animación de entrada */
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+.success-message p {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* El contenedor del video */
+.success-video {
+    width: 112px; /* Tamaño del video */
+    height: 112px;
+    object-fit: cover; /*asegura que el video no se deforme*/
+    background-image: url('/img/exito.mp4.mp4'); /* Ruta de tu video */
+    border-radius: 50%; /* Hace que el video sea circular */
+}
+
+/* Keyframes para que el mensaje baje suavemente */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
