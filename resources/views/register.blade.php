@@ -10,7 +10,7 @@
 
 <div class="register-container">
     <h2>Registro de Estudiante</h2>
-
+<!-- lector de errores  -->
     @if ($errors->any())
     <div style="color: red;">
         <ul>
